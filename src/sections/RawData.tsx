@@ -1,189 +1,170 @@
-import { useRef, useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRef, useEffect } from 'react';
 
 interface ScrollCard {
     id: number;
-    content: string;
+    header: string;
+    content: React.ReactNode;
 }
 
 const cards: ScrollCard[] = [
     {
         id: 1,
-        content: "Before the philosophy, there was the feeling.",
+        header: "The Genesis",
+        content: (
+            <>
+                <p>Before the philosophy, there was the feeling.</p>
+                <p>The raw data of a mind in processing.</p>
+                <p><strong>1971.</strong> The Santa Line Slaying.</p>
+                <p>A young boy witnesses violence that would forge a lifetime of deciphering the human condition.</p>
+                <p>His trauma officially compared to a Vietnam veteran who served three tours.</p>
+            </>
+        ),
     },
     {
         id: 2,
-        content: "The raw data of a mind in processing.",
+        header: "The Illusion Revealed",
+        content: (
+            <>
+                <p>The human mind as a <strong>computer hard drive</strong>, systematically cluttered with corrupted files.</p>
+                <p>Controlled knowledge.</p>
+                <p>Societal dogma.</p>
+                <p>Historical manipulations.</p>
+                <p>The <strong>"Fall of Babylon"</strong>—a state of confusion imposed by the 1% in power.</p>
+            </>
+        ),
     },
     {
         id: 3,
-        content: "When no-things inside my skill is done,\nAre leaving your nao.\nThat brings to feel!",
+        header: "The Three Languages",
+        content: (
+            <>
+                <p><strong>Mathematics</strong> — The language of logic, pattern, and order.</p>
+                <p><strong>Music</strong> — The language of vibration, harmony, and emotional resonance.</p>
+                <p><strong>Energy</strong> — The fundamental language of existence that connects all things.</p>
+                <p>Master these to reconnect with the <strong>"Uni-Verse"</strong>—One Song, One Truth.</p>
+            </>
+        ),
     },
     {
         id: 4,
-        content: "A lifely unill head woow,\nAnd then came to me,\nAnd tile things are pought.",
+        header: "The Word Warrior",
+        content: (
+            <>
+                <p>The journey completes when one becomes a <strong>Word Warrior</strong>.</p>
+                <p>Masculine energy integrated with feminine energy.</p>
+                <p>Power balanced with love.</p>
+                <p>Strength united with caring.</p>
+                <p>A healthy, balanced human with integrity.</p>
+            </>
+        ),
     },
     {
         id: 5,
-        content: "But this scuffle our coon,\nAnd he cerve to view,\nAnd the more you freight youd.",
-    },
-    {
-        id: 6,
-        content: "And thou alight the poeery\nIn the Phoenix Wiem.",
+        header: "The Future",
+        content: (
+            <>
+                <p>Projected influence over the next <strong>25 years</strong>.</p>
+                <p>Education transformed.</p>
+                <p>Institutional religion declines.</p>
+                <p>Government transparency demanded.</p>
+                <p>A revolution of consciousness.</p>
+                <p>Not of weapons, but of <strong>liberated minds</strong>.</p>
+            </>
+        ),
     },
 ];
 
 export function RawData() {
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const [showLeft, setShowLeft] = useState(false);
-    const [showRight, setShowRight] = useState(true);
-
-    const checkScroll = () => {
-        if (!scrollRef.current) return;
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        setShowLeft(scrollLeft > 0);
-        setShowRight(scrollLeft < scrollWidth - clientWidth - 10);
-    };
+    const sectionRef = useRef<HTMLElement>(null);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const progressRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const el = scrollRef.current;
-        if (el) {
-            el.addEventListener('scroll', checkScroll);
-            checkScroll();
-        }
-        return () => el?.removeEventListener('scroll', checkScroll);
+        const handleScroll = () => {
+            if (!sectionRef.current || !trackRef.current || !progressRef.current) return;
+
+            const sectionTop = sectionRef.current.offsetTop;
+            const sectionHeight = sectionRef.current.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            // Check if we're in the section range
+            if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight - windowHeight) {
+                // Calculate progress (0 to 1) based on how far we've scrolled within the sticky timeframe
+                // The sticky container is 100vh, so scrollable distance is sectionHeight - windowHeight
+                const progress = Math.max(0, Math.min(1, (scrollY - sectionTop) / (sectionHeight - windowHeight)));
+
+                // Calculate horizontal translation
+                // We want to translate the track to the left as we scroll down
+                const trackWidth = trackRef.current.scrollWidth;
+                const viewportWidth = window.innerWidth;
+                // Total scrollable width = trackWidth - viewportWidth + padding
+                const maxTranslate = trackWidth - viewportWidth + 200;
+
+                // Apply transforms directly for performance
+                const translateX = -progress * maxTranslate;
+                trackRef.current.style.transform = `translateY(-50%) translateX(${translateX}px)`;
+
+                // Update progress bar
+                progressRef.current.style.width = `${progress * 100}%`;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scroll = (direction: 'left' | 'right') => {
-        if (!scrollRef.current) return;
-        const amount = 400;
-        scrollRef.current.scrollBy({
-            left: direction === 'left' ? -amount : amount,
-            behavior: 'smooth',
-        });
-    };
-
     return (
-        <section className="relative w-full py-24 bg-[#0a0505] overflow-hidden">
-            {/* Background Lava Texture */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-[url('/phoenix-frame-bg.png')] bg-cover opacity-20 mix-blend-overlay" />
-                <div className="absolute inset-0 bg-[#0a0505]/80" />
-            </div>
+        <section
+            ref={sectionRef}
+            className="relative h-[400vh] bg-[#000]"
+        >
+            <div className="sticky top-0 h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: "url('/Gemini_Generated_Image_js5na2js5na2js5n(1).png')" }}>
 
-            {/* Central Lava Stream (SVG Wave) */}
-            <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 h-64 z-0 pointer-events-none opacity-80">
-                <svg
-                    className="w-full h-full min-w-[1200px]"
-                    viewBox="0 0 1200 200"
-                    preserveAspectRatio="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/25 pointer-events-none" />
+
+                <h2 className="absolute top-[60px] left-1/2 -translate-x-1/2 font-cinzel text-4xl md:text-6xl text-[#f4e4c1] text-center z-10 tracking-[12px] uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+                    The Raw Data
+                </h2>
+
+                {/* Horizontal Track */}
+                <div
+                    ref={trackRef}
+                    className="absolute top-1/2 left-0 flex gap-[100px] px-[100px] will-change-transform"
+                    style={{ transform: 'translateY(-50%)' }}
                 >
-                    <path
-                        d="M0,100 C150,150 300,50 450,100 C600,150 750,50 900,100 C1050,150 1200,50 1350,100"
-                        fill="none"
-                        stroke="url(#lavaGradient)"
-                        strokeWidth="40"
-                        filter="url(#glow)"
-                        className="animate-pulse-slow"
-                    />
-                    <path
-                        d="M0,100 C150,150 300,50 450,100 C600,150 750,50 900,100 C1050,150 1200,50 1350,100"
-                        fill="none"
-                        stroke="url(#coreGradient)"
-                        strokeWidth="10"
-                        className="animate-flow-slow"
-                        strokeDasharray="20 10"
-                    />
-                    <defs>
-                        <linearGradient id="lavaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#FF4500" stopOpacity="0" />
-                            <stop offset="20%" stopColor="#FF4500" />
-                            <stop offset="50%" stopColor="#FFD700" />
-                            <stop offset="80%" stopColor="#FF4500" />
-                            <stop offset="100%" stopColor="#FF4500" stopOpacity="0" />
-                        </linearGradient>
-                        <linearGradient id="coreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#FFF" stopOpacity="0" />
-                            <stop offset="50%" stopColor="#FFF" stopOpacity="0.8" />
-                            <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
-                        </linearGradient>
-                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="15" result="blur" />
-                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                        </filter>
-                    </defs>
-                </svg>
-            </div>
+                    {cards.map((card) => (
+                        <div key={card.id} className="parchment flex-shrink-0 w-[85vw] md:w-[500px] min-h-[500px] md:min-h-[600px] flex flex-col justify-center relative shadow-2xl">
+                            <div className="parchment-texture absolute inset-0 rounded-[8px_20px_20px_8px] pointer-events-none" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6">
-                {/* Header */}
-                <div className="mb-12">
-                    <span className="text-xs font-mono text-white/50 uppercase tracking-widest">
-                        The Raw Data
-                    </span>
-                </div>
+                            <div className="quote-mark open absolute top-[30px] left-[30px] font-tangerine text-[5rem] text-[#8b4513] opacity-40 leading-none">"</div>
 
-                {/* Scroll Container */}
-                <div className="relative group">
-                    {/* Left Arrow */}
-                    <button
-                        onClick={() => scroll('left')}
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 p-3 bg-black/50 backdrop-blur-sm rounded-full border border-[#FF4500]/30 text-[#FF4500] hover:bg-[#FF4500]/10 transition-all ${showLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                            }`}
-                    >
-                        <ChevronLeft className="w-6 h-6" />
-                    </button>
-
-                    <div
-                        ref={scrollRef}
-                        className="flex gap-8 overflow-x-auto pb-8 hide-scrollbar snap-x snap-mandatory"
-                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-                    >
-                        {cards.map((card) => (
-                            <div
-                                key={card.id}
-                                className="flex-shrink-0 w-[280px] sm:w-[320px] snap-center"
-                            >
-                                {/* Parchment Card */}
-                                <div className="relative aspect-[3/4] p-8 flex items-center justify-center text-center transform transition-transform duration-500 hover:-translate-y-2">
-
-                                    {/* Parchment Background */}
-                                    <div className="absolute inset-0 bg-[#dacca8] rounded sm:rounded-md shadow-2xl parchment-texture transform rotate-1" />
-
-                                    {/* Torn Edge Effect (Top/Bottom) - Simulated with CSS clip-path or simple borders for now */}
-                                    <div className="absolute inset-0 border-[6px] border-black/5 rounded sm:rounded-md pointer-events-none" />
-
-                                    {/* Content */}
-                                    <div className="relative z-10 font-cinzel text-black/80 font-medium leading-relaxed italic">
-                                        <span className="text-4xl absolute -top-4 -left-2 text-[#8B1A1A]/20">“</span>
-                                        {card.content.split('\n').map((line, i) => (
-                                            <span key={i} className="block mb-2 last:mb-0">
-                                                {line}
-                                            </span>
-                                        ))}
-                                        <span className="text-4xl absolute -bottom-8 -right-2 text-[#8B1A1A]/20 rotate-180">“</span>
-                                    </div>
-
-                                    {/* Burnt/Shadow Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#8B4513]/10 via-transparent to-[#8B4513]/20 rounded sm:rounded-md pointer-events-none mix-blend-multiply" />
+                            <div className="parchment-content relative z-10 font-tangerine text-[1.8rem] md:text-[2.2rem] leading-relaxed text-[#1a0f05] text-center drop-shadow-sm">
+                                <div className="content-header font-cinzel text-lg md:text-xl font-semibold text-[#5a3d2b] uppercase tracking-[4px] mb-[30px] pb-[15px] border-b-2 border-[#5a3d2b]/30">
+                                    {card.header}
+                                </div>
+                                <div className="space-y-5">
+                                    {card.content}
                                 </div>
                             </div>
-                        ))}
 
-                        {/* Spacer for right padding */}
-                        <div className="w-4 flex-shrink-0" />
-                    </div>
-
-                    {/* Right Arrow */}
-                    <button
-                        onClick={() => scroll('right')}
-                        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 p-3 bg-black/50 backdrop-blur-sm rounded-full border border-[#FF4500]/30 text-[#FF4500] hover:bg-[#FF4500]/10 transition-all ${showRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                            }`}
-                    >
-                        <ChevronRight className="w-6 h-6" />
-                    </button>
+                            <div className="quote-mark close absolute bottom-[30px] right-[30px] font-tangerine text-[5rem] text-[#8b4513] opacity-40 leading-none">"</div>
+                        </div>
+                    ))}
                 </div>
+
+                {/* Progress Bar */}
+                <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 w-[200px] h-[3px] bg-[#f4e4c1]/20 rounded-full overflow-hidden z-10">
+                    <div
+                        ref={progressRef}
+                        className="h-full bg-gradient-to-r from-[#ff6b35] to-[#f7931e] w-0 transition-[width] duration-100 ease-linear"
+                    />
+                </div>
+
             </div>
         </section>
     );

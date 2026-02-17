@@ -57,6 +57,7 @@ module.exports = {
       },
       fontFamily: {
         cinzel: ['"Cinzel Decorative"', 'serif'],
+        tangerine: ['Tangerine', 'cursive'],
         inter: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
