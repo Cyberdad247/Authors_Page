@@ -2,6 +2,7 @@ import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { RawData } from './sections/RawData';
 import { GravityAnchor } from './sections/GravityAnchor';
+import { AlchemyLab } from './sections/AlchemyLab';
 import { BookShelf } from './sections/BookShelf';
 import { HighCouncil } from './sections/HighCouncil';
 import { NewsletterMagnet } from './sections/NewsletterMagnet';
@@ -17,6 +18,7 @@ function App() {
         <Hero />
         <RawData />
         <GravityAnchor />
+        <AlchemyLab />
         <BookShelf />
         <HighCouncil />
         <NewsletterMagnet />
