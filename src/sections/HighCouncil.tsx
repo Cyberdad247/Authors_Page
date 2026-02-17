@@ -190,33 +190,6 @@ export function HighCouncil() {
     >
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
 
-        {/* Purple profile anchor */}
-        <div 
-          className={`mb-16 rounded-2xl border border-violet-300/20 bg-gradient-to-r from-violet-950/80 via-violet-800/60 to-indigo-900/70 p-6 lg:p-10 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="relative shrink-0">
-              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-[#FF8A00] to-[#8B5CF6] blur-md opacity-80" />
-              <img
-                src="/profile-placeholder.svg"
-                alt="Profile placeholder"
-                className="relative w-40 h-40 lg:w-52 lg:h-52 rounded-full object-cover border-2 border-white/30"
-                loading="lazy"
-              />
-            </div>
-            <div className="text-center md:text-left">
-              <p className="text-xs font-mono uppercase tracking-[0.25em] text-violet-200/80 mb-3">The Gravity Anchor</p>
-              <h3 className="font-cinzel text-3xl lg:text-4xl text-white mb-3">Profile Image Holding Space</h3>
-              <p className="text-white/70 max-w-2xl">
-                This purple section now uses a dedicated placeholder so you can drop in the final portrait at any time.
-                Replace <span className="font-mono text-violet-200">/public/profile-placeholder.svg</span> with the real profile photo when ready.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Section header */}
         <div 
           className={`text-center mb-16 transition-all duration-700 ${
