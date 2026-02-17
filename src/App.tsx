@@ -5,7 +5,7 @@ import { GravityAnchor } from './sections/GravityAnchor';
 import { AlchemyLab } from './sections/AlchemyLab';
 import { BookShelf } from './sections/BookShelf';
 import { HighCouncil } from './sections/HighCouncil';
-import { NewsletterMagnet } from './sections/NewsletterMagnet';
+import { Singularity } from './sections/Singularity';
 import { Manifesto } from './sections/Manifesto';
 import { Footer } from './sections/Footer';
 import './App.css';
@@ -21,7 +21,7 @@ function App() {
         <AlchemyLab />
         <BookShelf />
         <HighCouncil />
-        <NewsletterMagnet />
+        <Singularity />
         <Manifesto />
       </main>
       <Footer />
