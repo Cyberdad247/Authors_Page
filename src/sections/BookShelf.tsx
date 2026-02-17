@@ -10,32 +10,18 @@ interface Book {
 
 const books: Book[] = [
   {
-    id: 'sovereign',
-    title: 'Sovereign',
-    subtitle: 'The Strategy',
-    cover: '/book-sovereign.jpg',
-    color: '#1A1A1A',
+    id: 'one-mans-opinion',
+    title: "One Man's Opinion",
+    subtitle: 'Perspective & Philosophy',
+    cover: '/book-one-mans-opinion.svg',
+    color: '#6B2E2E',
   },
   {
-    id: 'kinetic',
-    title: 'Kinetic',
-    subtitle: 'The Execution',
-    cover: '/book-kinetic.jpg',
-    color: '#1E3A5F',
-  },
-  {
-    id: 'iron',
-    title: 'Iron Gate',
-    subtitle: 'The Security',
-    cover: '/book-iron.jpg',
-    color: '#2D2D2D',
-  },
-  {
-    id: 'merlin',
-    title: 'Merlin',
-    subtitle: 'The Wisdom',
-    cover: '/book-merlin.jpg',
-    color: '#3D2A5A',
+    id: 'rise-of-phoenix',
+    title: 'Rise of the Phoenix',
+    subtitle: 'Illusions Revealed',
+    cover: '/book-rise-of-the-phoenix.svg',
+    color: '#7A1F1F',
   },
 ];
 
@@ -240,8 +226,7 @@ export function BookShelf() {
             The <span className="text-phoenix-gradient">Shelf</span>
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">
-            Four tomes. Four pillars of sovereignty. Each book contains the distilled wisdom 
-            of the Round Table.
+            Two featured titles in 3D format — your flagship works presented on the interactive shelf.
           </p>
         </div>
 
