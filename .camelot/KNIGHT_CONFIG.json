@@ -1,0 +1,49 @@
+{
+    "knight_name": "Sir Literatus",
+    "knight_title": "The Author's Hand",
+    "project": "VaShawn O. Head Authors Page",
+    "repository": "https://github.com/Cyberdad247/Authors_Page.git",
+    "version": "v214.2.0",
+    "stack": {
+        "framework": "React 19",
+        "bundler": "Vite 7.2.4",
+        "styling": "Tailwind CSS 3.4.19",
+        "components": "shadcn/ui (40+)",
+        "language": "TypeScript 5.9.3",
+        "validation": "Zod 4.3.5"
+    },
+    "palette": {
+        "base": "#0a0505",
+        "text": "#ffffff",
+        "accent": "inherited_from_tailwind_config"
+    },
+    "cognitive_settings": {
+        "temperature": 0.3,
+        "reasoning": "ReAct",
+        "output_format": "TypeScript + Tailwind"
+    },
+    "tool_whitelist": [
+        "filesystem",
+        "git",
+        "npm_build",
+        "npm_lint",
+        "browser_preview"
+    ],
+    "sections": [
+        "Navigation",
+        "Hero",
+        "BookShelf",
+        "HighCouncil",
+        "NewsletterMagnet",
+        "Manifesto",
+        "Footer"
+    ],
+    "governance": {
+        "ledger": "PROVENANCE_LEDGER.md",
+        "tasks": "TASK.md",
+        "verification": "VERIFICATION.md",
+        "context_anchor": ".camelot/CONTEXT_ANCHOR.md",
+        "self_maintenance": ".camelot/protocols/SELF_MAINTENANCE.md"
+    },
+    "sync_target": "C:\\Users\\vizio\\CAMELOT_OS\\PROVENANCE_LEDGER.md"
+}

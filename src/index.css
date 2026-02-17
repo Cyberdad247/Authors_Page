@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Phoenix Color System - Dark Theme with Fire Accents */
+    --background: 0 20% 4%;          /* Deep obsidian #0a0505 */
+    --foreground: 0 0% 100%;         /* White */
+    --card: 0 15% 8%;                /* Dark card bg */
+    --card-foreground: 0 0% 100%;
+    --popover: 0 15% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 16 100% 50%;          /* Phoenix Orange #FF4500 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;           /* Dark gray */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 10% 15%;              /* Muted dark */
+    --muted-foreground: 0 0% 60%;    /* Stone gray */
+    --accent: 45 100% 50%;           /* Gold #FFD700 */
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 16 50% 20%;            /* Orange-tinted border */
+    --input: 16 50% 20%;
+    --ring: 16 100% 50%;             /* Orange ring */
+    --radius: 0.25rem;
+    
+    /* Phoenix-specific colors */
+    --phoenix-orange: #FF4500;
+    --phoenix-gold: #FFD700;
+    --phoenix-emerald: #00FF99;
+    --phoenix-dark: #0a0505;
+    --phoenix-burgundy: #4A0404;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#0a0505] text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel Decorative', serif;
+    letter-spacing: -0.02em;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  /* 3D Book Physics Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  /* Phoenix gradient text */
+  .text-phoenix-gradient {
+    background: linear-gradient(135deg, #FF4500 0%, #FF6B00 50%, #FFD700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gold gradient text (legacy support) */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Grain texture overlay */
+  .grain-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Magnetic button effect */
+  .magnetic-btn {
+    transition: transform 0.15s ease-out;
+  }
+  
+  /* Book shadow */
+  .book-shadow {
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.5),
+      0 2px 4px -2px rgba(0, 0, 0, 0.5),
+      0 20px 40px -10px rgba(255, 69, 0, 0.2);
+  }
+  
+  .book-shadow-hover {
+    box-shadow: 
+      0 10px 15px -3px rgba(0, 0, 0, 0.6),
+      0 4px 6px -4px rgba(0, 0, 0, 0.4),
+      0 30px 60px -15px rgba(255, 69, 0, 0.3);
+  }
+  
+  /* Phoenix glow */
+  .shadow-phoenix {
+    box-shadow: 0 0 40px rgba(255, 69, 0, 0.3);
+  }
+  
+  .shadow-phoenix-hover {
+    box-shadow: 0 0 60px rgba(255, 69, 0, 0.5);
+  }
+  
+  /* Scroll reveal */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Stagger delays */
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+  .stagger-5 { transition-delay: 0.5s; }
+  .stagger-6 { transition-delay: 0.6s; }
+}
+
+/* Custom scrollbar - Phoenix theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF4500/50;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4500;
+}
+
+/* Selection color - Phoenix */
+::selection {
+  background: rgba(255, 69, 0, 0.3);
+  color: white;
+}
+
+/* Phoenix animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+    opacity: 0.8;
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 69, 0, 0.6);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ember-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-ember-rise {
+  animation: ember-rise 3s ease-out infinite;
+}
