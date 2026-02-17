@@ -103,9 +103,12 @@ export function AlchemyLab() {
                         {items.map((item) => {
                             const Icon = item.icon;
                             return (
-                                <div
+                                <a
                                     key={item.id}
-                                    className={`group relative flex flex-col items-center text-center transition-all duration-700`}
+                                    href="https://headartworks.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`group relative flex flex-col items-center text-center transition-all duration-700 cursor-pointer`}
                                     style={{
                                         transitionDelay: `${item.delay}ms`,
                                         opacity: isVisible ? 1 : 0,
@@ -167,7 +170,7 @@ export function AlchemyLab() {
                                         }}
                                     />
 
-                                </div>
+                                </a>
                             );
                         })}
                     </div>
