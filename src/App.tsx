@@ -1,6 +1,7 @@
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { RawData } from './sections/RawData';
+import { GravityAnchor } from './sections/GravityAnchor';
 import { BookShelf } from './sections/BookShelf';
 import { HighCouncil } from './sections/HighCouncil';
 import { NewsletterMagnet } from './sections/NewsletterMagnet';
@@ -15,6 +16,7 @@ function App() {
       <main className="bg-[#0a0505]">
         <Hero />
         <RawData />
+        <GravityAnchor />
         <BookShelf />
         <HighCouncil />
         <NewsletterMagnet />
