@@ -1,15 +1,13 @@
-# 📜 PROVENANCE_LEDGER.md — VaShawn O. Head Authors Page
-**[GUARDIAN]:** Sir Literatus (The Author's Hand)
-**[SYNC_TARGET]:** `C:\Users\vizio\CAMELOT_OS\PROVENANCE_LEDGER.md` (Major events only)
+# 📜 PROVENANCE_LEDGER.md
 
-| Date | Agent | Type | Action | Details |
-| :--- | :--- | :--- | :--- | :--- |
-| 2026-02-16T20:49 | Merlin_Ω | GENESIS | Sir Literatus Forged | Knight persona, config, context anchor, and self-maintenance deployed to `.camelot/` |
-| 2026-02-16T20:49 | Sir Literatus | GOVERNANCE | Ledger Upgraded | Structured schema with Agent/Type/Action/Details columns |
-| 2026-02-16T20:49 | Sir Literatus | GOVERNANCE | Context Anchor Created | Immutable project identity locked in `.camelot/CONTEXT_ANCHOR.md` |
-| 2026-02-16T20:49 | Sir Literatus | GOVERNANCE | Self-Maintenance Protocol Armed | Per-session pulse + weekly audit + kernel sync rules |
-| 2026-02-15 | Lady Veritas | AUDIT | Initial Project Audit & Documentation Setup | Legacy entry from initial project onboarding |
-
----
-> **Maintenance:** When this ledger exceeds 100 entries, archive older entries to `.camelot/ledger_archive/`.
-> **Sync Rule:** Only GENESIS, DEPLOY, and EVOLUTION events propagate to the Kernel ledger via `//Ω_SYNC`.
+| Date | Action | Hash | Knight |
+| :--- | :--- | :--- | :--- |
+| 2026-02-15 | Initial Project Audit & Documentation Setup | - | Lady Veritas |
+| 2026-02-16 | Removed stale `index.lock` from parent repo | - | Sir Kinetic |
+| 2026-02-16 | Initialized standalone git repo in app directory | - | Sir Kinetic |
+| 2026-02-16 | Created `.gitignore` (node_modules, dist, .bun, .agent, .gemini) | - | Sir Kinetic |
+| 2026-02-16 | Updated `README.md` — Phoenix Author Platform documentation | - | Sir Forge |
+| 2026-02-16 | Committed & force-pushed 92 files to GitHub | `9e33321` | Sir Kinetic |
+| 2026-02-17 | Merged `codex/implement-interactive-scrolling-with-profile-picture-holder` | `f718235` | Sir Kinetic |
+| 2026-02-17 | Build verified: `tsc -b && vite build` — 3.91s, 81.53 kB gzip | - | Lady Veritas |
+| 2026-02-17 | Pushed merged result to GitHub `main` | `f718235` | Sir Kinetic |

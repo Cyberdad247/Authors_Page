@@ -41,14 +41,14 @@ section {
 
 /* Book shadow effects - Phoenix themed */
 .shadow-book {
-  box-shadow: 
+  box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.5),
     0 2px 4px -2px rgba(0, 0, 0, 0.5),
     0 20px 40px -10px rgba(255, 69, 0, 0.2);
 }
 
 .shadow-book-hover {
-  box-shadow: 
+  box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.6),
     0 4px 6px -4px rgba(0, 0, 0, 0.4),
     0 30px 60px -15px rgba(255, 69, 0, 0.3);
@@ -67,6 +67,25 @@ section {
   box-shadow: 0 0 40px rgba(255, 69, 0, 0.3);
 }
 
+/* Wooden shelf surface */
+.shelf-surface {
+  background: linear-gradient(180deg,
+      #3D2B1F 0%,
+      #5C3A2E 30%,
+      #4A2E20 50%,
+      #3D2B1F 70%,
+      #2E1F15 100%);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Book warm glow */
+.book-glow {
+  box-shadow: 0 0 60px var(--glow-color, rgba(255, 69, 0, 0.3));
+}
+
 /* Grain overlay */
 .grain-overlay::after {
   content: '';
@@ -80,10 +99,13 @@ section {
 
 /* Phoenix animations */
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
     opacity: 0.8;
   }
+
   50% {
     box-shadow: 0 0 40px rgba(255, 69, 0, 0.6);
     opacity: 1;
@@ -91,9 +113,12 @@ section {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -104,6 +129,7 @@ section {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
+
   100% {
     transform: translateY(-100px) scale(0.5);
     opacity: 0;
@@ -131,6 +157,7 @@ section {
 
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
