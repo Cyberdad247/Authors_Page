@@ -122,7 +122,7 @@ export function RawData() {
             className="relative h-[400vh] bg-[#000]"
         >
             <div className="sticky top-0 h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: "url('/Gemini_Generated_Image_js5na2js5na2js5n(1).png')" }}>
+                style={{ backgroundImage: "url('/Gemini_Generated_ImagesJ5na2js5na2js5n(1).png')" }}>
 
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/25 pointer-events-none" />
