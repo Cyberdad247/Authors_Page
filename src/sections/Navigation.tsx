@@ -2,12 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 
-const navLinks = [
-  { label: 'Library', href: '#shelf' },
-  { label: 'Council', href: '#council' },
-  { label: 'Protocol', href: '#magnet' },
-  { label: 'Manifesto', href: '#manifesto' },
-];
+const navLinks: { label: string; href: string }[] = [];
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,11 +30,10 @@ export function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
             ? 'bg-[#0a0505]/90 backdrop-blur-md border-b border-[#FF4500]/20 shadow-lg'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -98,23 +92,21 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${
-          isMobileMenuOpen
+        className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${isMobileMenuOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
-        }`}
+          }`}
       >
         {/* Backdrop */}
-        <div 
+        <div
           className="absolute inset-0 bg-[#0a0505]/90 backdrop-blur-sm"
           onClick={() => setIsMobileMenuOpen(false)}
         />
-        
+
         {/* Menu panel */}
         <div
-          className={`absolute top-16 left-0 right-0 bg-[#0a0505] border-b border-[#FF4500]/30 shadow-xl transition-transform duration-500 ${
-            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
-          }`}
+          className={`absolute top-16 left-0 right-0 bg-[#0a0505] border-b border-[#FF4500]/30 shadow-xl transition-transform duration-500 ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+            }`}
         >
           <div className="px-6 py-8 space-y-6">
             {navLinks.map((link) => (
