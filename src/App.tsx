@@ -1,3 +1,5 @@
+import { SidePagination } from './components/layout/SidePagination';
+import { EnergyThread } from './components/layout/EnergyThread';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { RawData } from './sections/RawData';
@@ -13,6 +15,8 @@ import './App.css';
 function App() {
   return (
     <div className="min-h-screen bg-[#0a0505] text-white overflow-x-hidden">
+      <SidePagination />
+      <EnergyThread />
       <Navigation />
       <main className="bg-[#0a0505]">
         <Hero />

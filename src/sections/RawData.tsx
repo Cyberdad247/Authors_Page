@@ -120,6 +120,7 @@ export function RawData() {
     return (
         <section
             ref={sectionRef}
+            id="raw-data"
             className="relative h-[300vh] bg-[#000]"
         >
             <div className="sticky top-0 h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
