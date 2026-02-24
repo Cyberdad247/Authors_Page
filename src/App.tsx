@@ -5,7 +5,7 @@ import { GravityAnchor } from './sections/GravityAnchor';
 import { AlchemyShop } from './sections/AlchemyShop';
 import { BookShelf } from './sections/BookShelf';
 import { HighCouncil } from './sections/HighCouncil';
-import { Singularity } from './sections/Singularity';
+import { SingularityCTA } from './sections/SingularityCTA';
 import { Manifesto } from './sections/Manifesto';
 import { Footer } from './sections/Footer';
 import './App.css';
@@ -21,7 +21,7 @@ function App() {
         <AlchemyShop />
         <BookShelf />
         <HighCouncil />
-        <Singularity />
+        <SingularityCTA />
         <Manifesto />
       </main>
       <Footer />
