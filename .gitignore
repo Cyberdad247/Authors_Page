@@ -33,3 +33,4 @@ dist-ssr
 .agent
 .gemini
 .vercel
+.env*.local

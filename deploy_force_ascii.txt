@@ -1,0 +1,20 @@
+kB[22m[1m[22m[2m ??? 
+gzip:  19.26 kB[22m
+2026-02-24T19:00:28.278Z  [
+2mdist/[22m[2massets/[22m
+[36mindex-DIOtqu4T.js   
+[39m[1m[2m398.32 
+kB[22m[1m[22m[2m ??? 
+gzip: 123.92 kB[22m
+2026-02-24T19:00:28.281Z  
+[32m??? built in 6.46s[39m
+2026-02-24T19:00:28.588Z  
+Build Completed in 
+/vercel/output [27s]
+2026-02-24T19:00:28.693Z  
+Deploying outputs...
+2026-02-24T19:00:32.833Z  
+Deployment completed
+2026-02-24T19:00:34.190Z  
+Creating build cache...
+https://authors-page-2p8xerdkl-invisionedmarketing.vercel.app

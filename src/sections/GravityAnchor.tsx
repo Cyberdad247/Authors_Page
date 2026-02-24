@@ -26,7 +26,7 @@ export function GravityAnchor() {
         <section
             ref={sectionRef}
             id="gravity-anchor"
-            className="relative w-full py-24 lg:py-32 overflow-hidden bg-[#0a0505]"
+            className="relative w-full pt-4 pb-24 lg:pb-32 overflow-hidden bg-[#0a0505]"
         >
             {/* Background - Purple Cosmic Nebula */}
             <div className="absolute inset-0 z-0">
@@ -38,7 +38,7 @@ export function GravityAnchor() {
             </div>
 
             {/* Energy Beam Connector (Coming from top) */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-32 bg-gradient-to-b from-[#FF4500] to-[#8B5CF6] opacity-80 blur-sm z-10" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-24 bg-gradient-to-b from-[#FF4500] to-[#8B5CF6] opacity-80 blur-sm z-10" />
 
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Section Label */}
@@ -48,7 +48,7 @@ export function GravityAnchor() {
                     </span>
                 </div>
 
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 mt-12">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 mt-4">
 
                     {/* Left: Profile Image with Gravity Ring */}
                     <div className={`relative flex-shrink-0 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>

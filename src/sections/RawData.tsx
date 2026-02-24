@@ -104,7 +104,7 @@ export function RawData() {
 
                 // Apply transforms directly for performance
                 const translateX = -progress * maxTranslate;
-                trackRef.current.style.transform = `translateY(-50%) translateX(${translateX}px)`;
+                trackRef.current.style.transform = `translateY(-45%) translateX(${translateX}px)`;
 
                 // Update progress bar
                 progressRef.current.style.width = `${progress * 100}%`;
@@ -120,7 +120,7 @@ export function RawData() {
     return (
         <section
             ref={sectionRef}
-            className="relative h-[400vh] bg-[#000]"
+            className="relative h-[300vh] bg-[#000]"
         >
             <div className="sticky top-0 h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: "url('/Gemini_Generated_ImagesJ5na2js5na2js5n(1).png')" }}>
@@ -135,8 +135,8 @@ export function RawData() {
                 {/* Horizontal Track */}
                 <div
                     ref={trackRef}
-                    className="absolute top-1/2 left-0 flex gap-[100px] px-[100px] will-change-transform"
-                    style={{ transform: 'translateY(-50%)' }}
+                    className="absolute top-[45%] left-0 flex gap-[100px] px-[100px] will-change-transform"
+                    style={{ transform: 'translateY(-45%)' }}
                 >
                     {cards.map((card) => (
                         <RawDataCard
