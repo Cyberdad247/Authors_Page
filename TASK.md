@@ -25,5 +25,5 @@
 - [x] [Sir Literatus] Deploy `.camelot/` governance directory.
 - [x] [Sir Literatus] Create `CONTEXT_ANCHOR.md` with immutable project context.
 - [x] [Sir Literatus] Arm `SELF_MAINTENANCE.md` protocol.
-- [ ] [Sir Literatus] Execute first per-session pulse verification.
-- [ ] [Sir Literatus] Run initial `npm run build` integrity check.
+- [x] [Sir Literatus] Execute first per-session pulse verification.
+- [x] [Sir Literatus] Run initial `npm run build` integrity check.

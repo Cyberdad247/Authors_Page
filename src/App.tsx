@@ -2,7 +2,7 @@ import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { RawData } from './sections/RawData';
 import { GravityAnchor } from './sections/GravityAnchor';
-import { AlchemyLab } from './sections/AlchemyLab';
+import { AlchemyShop } from './sections/AlchemyShop';
 import { BookShelf } from './sections/BookShelf';
 import { HighCouncil } from './sections/HighCouncil';
 import { Singularity } from './sections/Singularity';
@@ -18,7 +18,7 @@ function App() {
         <Hero />
         <RawData />
         <GravityAnchor />
-        <AlchemyLab />
+        <AlchemyShop />
         <BookShelf />
         <HighCouncil />
         <Singularity />
