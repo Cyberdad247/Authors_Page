@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 
 const navLinks: { label: string; href: string }[] = [];
 
-export function Navigation() {
+export function TopNav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -31,8 +31,8 @@ export function Navigation() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-            ? 'bg-[#0a0505]/90 backdrop-blur-md border-b border-[#FF4500]/20 shadow-lg'
-            : 'bg-transparent'
+          ? 'bg-[#0a0505]/90 backdrop-blur-md border-b border-[#FF4500]/20 shadow-lg'
+          : 'bg-transparent'
           }`}
       >
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
@@ -93,8 +93,8 @@ export function Navigation() {
       {/* Mobile Menu */}
       <div
         className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${isMobileMenuOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none'
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none'
           }`}
       >
         {/* Backdrop */}

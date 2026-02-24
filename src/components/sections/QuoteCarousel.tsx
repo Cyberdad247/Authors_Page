@@ -75,7 +75,7 @@ const cards: ScrollCard[] = [
     },
 ];
 
-export function RawData() {
+export function QuoteCarousel() {
     const sectionRef = useRef<HTMLElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const progressRef = useRef<HTMLDivElement>(null);

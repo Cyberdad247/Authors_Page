@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Play } from 'lucide-react';
 
-export function Hero() {
+export function HeroIgnition() {
   const [isVisible, setIsVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
@@ -25,7 +25,7 @@ export function Hero() {
       className="relative w-full min-h-screen overflow-hidden flex items-center justify-center bg-[#0a0505]"
     >
       {/* 1. THE PHOENIX BACKGROUND - Volcanic Portal Frame */}
-      <div 
+      <div
         className="absolute inset-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/phoenix-frame-bg.png')" }}
       >
@@ -54,12 +54,11 @@ export function Hero() {
 
       {/* 2. THE CONTENT LAYER */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center">
-        
+
         {/* Headline: "The Protocol Has Begun" */}
-        <div 
-          className={`text-center mb-6 lg:mb-8 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
-          }`}
+        <div
+          className={`text-center mb-6 lg:mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
+            }`}
         >
           <span className="inline-block px-4 py-1.5 mb-4 text-xs font-mono text-[#00FF99] uppercase tracking-[0.3em] border border-[#00FF99]/30 rounded-full bg-[#00FF99]/5">
             The Protocol Has Begun
@@ -73,17 +72,16 @@ export function Hero() {
         </div>
 
         {/* 3. THE VIDEO FRAME (Centers into the image void) */}
-        <div 
-          className={`relative w-full max-w-3xl aspect-video transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-          }`}
+        <div
+          className={`relative w-full max-w-3xl aspect-video transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+            }`}
         >
           {/* Fire glow behind video */}
           <div className="absolute -inset-4 bg-gradient-to-r from-[#FF4500]/20 via-[#FF6B00]/30 to-[#FFD700]/20 rounded-lg blur-2xl animate-pulse-glow" />
-          
+
           {/* Video container with border */}
           <div className="relative w-full h-full rounded-lg border border-[#FF4500]/30 bg-black/80 overflow-hidden group cursor-pointer shadow-[0_0_60px_rgba(255,69,0,0.2)]">
-            
+
             {isPlaying ? (
               /* Actual Video Player */
               <div className="w-full h-full flex items-center justify-center bg-black">
@@ -99,17 +97,17 @@ export function Hero() {
               </div>
             ) : (
               /* Video Placeholder / Thumbnail */
-              <div 
+              <div
                 className="w-full h-full flex items-center justify-center relative"
                 onClick={() => setIsPlaying(true)}
               >
                 {/* Background thumbnail */}
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity duration-500"
                   style={{ backgroundImage: "url('/book-sovereign.jpg')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/60" />
-                
+
                 {/* Play button */}
                 <div className="relative z-20 flex flex-col items-center gap-4">
                   <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-[#00FF99]/30 group-hover:scale-110 group-hover:bg-[#FF4500]/20 transition-all duration-300 shadow-[0_0_40px_rgba(255,69,0,0.3)]">
@@ -131,10 +129,9 @@ export function Hero() {
         </div>
 
         {/* CTA Buttons */}
-        <div 
-          className={`mt-10 lg:mt-12 flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-500 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+        <div
+          className={`mt-10 lg:mt-12 flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
         >
           <button
             onClick={() => scrollToSection('magnet')}
@@ -151,10 +148,9 @@ export function Hero() {
         </div>
 
         {/* Social Proof */}
-        <div 
-          className={`mt-8 flex items-center gap-3 transition-all duration-1000 delay-700 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
+        <div
+          className={`mt-8 flex items-center gap-3 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <div className="flex -space-x-2">
             {[1, 2, 3, 4].map((i) => (
