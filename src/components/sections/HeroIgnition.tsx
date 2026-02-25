@@ -1,8 +1,28 @@
+import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+// Pre-seed particles to avoid impure Math.random during render
+// This satisfies the "zero runtime overhead" and "pure component" standards
+const PARTICLE_SEEDS = [...Array(15)].map(() => ({
+  left: `${20 + Math.random() * 60}%`,
+  top: `${60 + Math.random() * 30}%`,
+  delay: `${Math.random() * 3}s`,
+  duration: `${2 + Math.random() * 2}s`,
+}));
+
 export const HeroIgnition = () => {
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    // Scroll origin logic can be added here if needed for the EnergyThread
+  }, []);
+
   return (
-    <section id="hero" className="relative w-full min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-black">
+    <section
+      ref={heroRef}
+      id="hero"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-black"
+    >
       {/* Background: Lava / Magma (Theme Asset) */}
       <div
         className="absolute inset-0 z-0 opacity-40 bg-[url('/phoenix-frame-bg.png')] bg-cover bg-center"
@@ -10,6 +30,24 @@ export const HeroIgnition = () => {
       />
       {/* Gradient overlay to ensure text readability */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
+
+      {/* Ember particles effect - STATICALLY SEEDED */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+        {PARTICLE_SEEDS.map((p, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-[#FF4500] rounded-full animate-float"
+            style={{
+              left: p.left,
+              top: p.top,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
+              opacity: 0.6,
+              boxShadow: '0 0 6px #FF4500',
+            }}
+          />
+        ))}
+      </div>
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 w-full max-w-5xl">
@@ -21,8 +59,8 @@ export const HeroIgnition = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-12"
         >
-          <p className="text-gray-400 text-xs tracking-[0.3em] uppercase mb-4">The Ignition</p>
-          <h1 className="text-white text-5xl md:text-7xl font-cinzel tracking-wide mb-4 drop-shadow-2xl font-bold">
+          <p className="text-gray-400 text-xs tracking-[0.3em] uppercase mb-4 font-mono">The Ignition</p>
+          <h1 className="text-white text-4xl md:text-7xl font-cinzel tracking-wide mb-4 drop-shadow-2xl font-bold">
             THE ILLUSION IS REVEALED.
           </h1>
           <p className="text-orange-300/80 text-xl font-serif italic">

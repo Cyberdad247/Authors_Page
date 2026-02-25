@@ -38,7 +38,10 @@ export const SidePagination = () => {
     };
 
     return (
-        <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-center gap-8">
+        <div
+            className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-center gap-8 motion-reduce:hidden"
+            aria-label="Section navigation"
+        >
             {sections.map((section) => {
                 const isActive = activeSection === section.id;
                 return (

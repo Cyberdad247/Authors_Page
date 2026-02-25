@@ -23,13 +23,14 @@ export const EnergyThread = () => {
     );
 
     return (
-        <div className="fixed inset-0 pointer-events-none z-50">
+        <div className="fixed inset-0 pointer-events-none z-50 aria-hidden:hidden">
             <svg
-                className="w-full h-full"
+                className="w-full h-full energy-thread-svg"
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
             >
                 {/* The Base Energy Thread */}
                 <motion.path
