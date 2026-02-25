@@ -22,6 +22,9 @@ export const EnergyThread = () => {
         ['rgba(255, 69, 0, 0.8)', 'rgba(139, 92, 246, 0.8)', 'rgba(16, 185, 129, 0.8)', 'rgba(0, 255, 102, 0.8)']
     );
 
+    // Weaving Path Definition (Normalized 100x100)
+    const weavingPath = "M 50,0 C 50,10 40,15 40,20 C 40,25 60,30 60,40 C 60,50 30,55 30,65 C 30,75 70,80 70,85 C 70,90 50,95 50,100";
+
     return (
         <div className="fixed inset-0 pointer-events-none z-50 aria-hidden:hidden">
             <svg
@@ -34,7 +37,7 @@ export const EnergyThread = () => {
             >
                 {/* The Base Energy Thread */}
                 <motion.path
-                    d="M 50 0 V 100"
+                    d={weavingPath}
                     stroke={strokeColor}
                     strokeWidth="0.2"
                     style={{ pathLength }}
@@ -43,7 +46,7 @@ export const EnergyThread = () => {
 
                 {/* The Glow Layer */}
                 <motion.path
-                    d="M 50 0 V 100"
+                    d={weavingPath}
                     stroke={glowColor}
                     strokeWidth="0.8"
                     style={{ pathLength }}

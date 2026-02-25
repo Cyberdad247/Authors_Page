@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { 
-  Coins, 
-  Palette, 
-  LayoutGrid, 
-  Shield, 
-  Timer, 
-  HandMetal 
+import {
+  Coins,
+  Palette,
+  Timer,
+  HandMetal
 } from 'lucide-react';
 
 interface Knight {
@@ -36,24 +34,6 @@ const knights: Knight[] = [
     description: 'Commands the Aesthetic of Authority. Forges 3D Book Tilt physics and the Phoenix color palette.',
     icon: Palette,
     color: '#8B5CF6',
-  },
-  {
-    id: 'systema',
-    name: 'Sir Systema',
-    title: 'The Architect',
-    role: 'Semantic Structure',
-    description: 'Builds the Semantic Web. Creates SEO-optimized article indexes and social proof aggregations.',
-    icon: LayoutGrid,
-    color: '#3B82F6',
-  },
-  {
-    id: 'zenith',
-    name: 'Sir Zenith',
-    title: 'The Sentinel',
-    role: 'Security & Validation',
-    description: 'Guards the Iron Gate. Ensures Zod validation on all API routes. Rejects malformed payloads.',
-    icon: Shield,
-    color: '#EF4444',
   },
   {
     id: 'kronos',
@@ -87,34 +67,30 @@ function KnightCard({ knight, index, isVisible }: KnightCardProps) {
 
   return (
     <div
-      className={`group relative transition-all duration-500 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className={`group relative transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
       style={{ transitionDelay: `${index * 100}ms` }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div 
-        className={`relative p-6 lg:p-8 bg-white/5 border border-white/10 rounded-sm transition-all duration-300 ${
-          isHovered ? 'shadow-xl border-[#FF4500]/50 -translate-y-1 bg-white/10' : ''
-        }`}
+      <div
+        className={`relative p-6 lg:p-8 bg-white/5 border border-white/10 rounded-sm transition-all duration-300 ${isHovered ? 'shadow-xl border-[#FF4500]/50 -translate-y-1 bg-white/10' : ''
+          }`}
       >
         {/* Corner accent */}
-        <div 
-          className={`absolute top-0 right-0 w-16 h-16 transition-opacity duration-300 ${
-            isHovered ? 'opacity-100' : 'opacity-0'
-          }`}
+        <div
+          className={`absolute top-0 right-0 w-16 h-16 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'
+            }`}
           style={{
             background: `linear-gradient(135deg, transparent 50%, ${knight.color}15 50%)`,
           }}
         />
 
         {/* Icon */}
-        <div 
-          className={`w-12 h-12 rounded-sm flex items-center justify-center mb-5 transition-all duration-300 ${
-            isHovered ? 'scale-110' : ''
-          }`}
-          style={{ 
+        <div
+          className={`w-12 h-12 rounded-sm flex items-center justify-center mb-5 transition-all duration-300 ${isHovered ? 'scale-110' : ''
+            }`}
+          style={{
             backgroundColor: `${knight.color}15`,
             color: knight.color,
           }}
@@ -128,9 +104,9 @@ function KnightCard({ knight, index, isVisible }: KnightCardProps) {
             <h3 className="font-cinzel text-lg font-bold text-white">
               {knight.name}
             </h3>
-            <span 
+            <span
               className="text-xs px-2 py-0.5 rounded-full font-mono"
-              style={{ 
+              style={{
                 backgroundColor: `${knight.color}15`,
                 color: knight.color,
               }}
@@ -138,21 +114,20 @@ function KnightCard({ knight, index, isVisible }: KnightCardProps) {
               {knight.title}
             </span>
           </div>
-          
+
           <p className="text-sm font-mono text-[#FF4500] uppercase tracking-wider">
             {knight.role}
           </p>
-          
+
           <p className="text-white/60 text-sm leading-relaxed pt-2">
             {knight.description}
           </p>
         </div>
 
         {/* Bottom line accent */}
-        <div 
-          className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
-            isHovered ? 'w-full' : 'w-0'
-          }`}
+        <div
+          className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${isHovered ? 'w-full' : 'w-0'
+            }`}
           style={{ backgroundColor: knight.color }}
         />
       </div>
@@ -191,10 +166,9 @@ export function HighCouncil() {
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Section header */}
-        <div 
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+        <div
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
         >
           <span className="inline-block px-4 py-1.5 mb-6 text-xs font-mono text-[#FF4500] uppercase tracking-widest border border-[#FF4500]/30 rounded-full">
             The Architects
@@ -208,7 +182,7 @@ export function HighCouncil() {
         </div>
 
         {/* Knights grid - Bento style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {knights.map((knight, index) => (
             <KnightCard
               key={knight.id}
@@ -220,10 +194,9 @@ export function HighCouncil() {
         </div>
 
         {/* Decorative element */}
-        <div 
-          className={`mt-16 flex justify-center transition-all duration-700 delay-700 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
+        <div
+          className={`mt-16 flex justify-center transition-all duration-700 delay-700 ${isVisible ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <div className="flex items-center gap-4">
             <div className="w-12 h-px bg-[#FF4500]/30" />
