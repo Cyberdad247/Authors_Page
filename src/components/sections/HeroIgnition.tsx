@@ -24,10 +24,15 @@ export const HeroIgnition = () => {
       className="relative w-full min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-black"
     >
       {/* Background: Lava / Magma (Theme Asset) */}
-      <div
-        className="absolute inset-0 z-0 opacity-40 bg-[url('/phoenix-frame-bg.png')] bg-cover bg-center"
-        style={{ mixBlendMode: 'luminosity' }}
-      />
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/phoenix-frame-bg.png"
+          alt="Molten lava background"
+          className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+          loading="eager" // Load immediately for LCP
+          fetchPriority="high"
+        />
+      </div>
       {/* Gradient overlay to ensure text readability */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
 
@@ -68,12 +73,13 @@ export const HeroIgnition = () => {
           </p>
         </motion.div>
 
-        {/* Video Player Container */}
-        <motion.div
+        {/* Video Player Container - Semantic Button for A11y */}
+        <motion.button
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="relative w-full max-w-3xl aspect-video rounded-xl border border-white/10 bg-black/50 backdrop-blur-md shadow-[0_0_40px_rgba(255,69,0,0.15)] flex items-center justify-center group overflow-hidden cursor-pointer"
+          aria-label="Play Book Trailer Video"
+          className="relative w-full max-w-3xl aspect-video rounded-xl border border-white/10 bg-black/50 backdrop-blur-md shadow-[0_0_40px_rgba(255,69,0,0.15)] flex items-center justify-center group overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500/50"
         >
           {/* Internal Glow on Hover */}
           <div className="absolute inset-0 bg-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -92,7 +98,7 @@ export const HeroIgnition = () => {
 
           {/* Spark Origin (Where the EnergyThread visually begins) */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-24 h-24 bg-orange-500 rounded-full blur-[40px] opacity-60 pointer-events-none" />
-        </motion.div>
+        </motion.button>
 
       </div>
     </section>

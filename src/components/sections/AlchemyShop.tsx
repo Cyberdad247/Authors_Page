@@ -8,7 +8,7 @@ const shopItems = [
 
 export const AlchemyShop = () => {
     return (
-        <section id="alchemy-shop" className="relative w-full py-24 bg-black overflow-hidden flex flex-col items-center">
+        <section id="alchemy-shop" className="relative w-full bg-black overflow-hidden flex flex-col items-center">
             {/* Background Starfield/Nebula (Simulated) */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-900/20 via-black to-black opacity-80" />
 

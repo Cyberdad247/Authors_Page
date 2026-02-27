@@ -10,7 +10,7 @@ const socialLinks = [
 const footerLinks = [
   { label: 'Library', href: '#shelf' },
   { label: 'Council', href: '#council' },
-  { label: 'Protocol', href: '#magnet' },
+  { label: 'Alchemy', href: '#alchemy-shop' },
   { label: 'Manifesto', href: '#manifesto' },
 ];
 
@@ -25,7 +25,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative w-full py-16 lg:py-24 border-t border-white/10 bg-[#0a0505]">
+    <footer className="relative w-full pb-16 lg:pb-24 bg-[#0a0505]">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Brand */}
@@ -46,7 +46,7 @@ export function Footer() {
             <p className="text-white/50 text-sm max-w-xs">
               A tactical blueprint for building digital authority in the age of AI.
             </p>
-            
+
             {/* Social links */}
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => {
@@ -138,8 +138,8 @@ export function Footer() {
                 </h4>
                 <ul className="space-y-3">
                   <li>
-                    <a 
-                      href="mailto:knights@phoenix.io" 
+                    <a
+                      href="mailto:knights@phoenix.io"
                       className="text-sm text-white/50 hover:text-[#FF4500] transition-colors duration-300"
                     >
                       knights@phoenix.io

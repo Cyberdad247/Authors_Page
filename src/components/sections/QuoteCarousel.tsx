@@ -41,7 +41,7 @@ export const QuoteCarousel = () => {
     };
 
     return (
-        <section id="raw-data" className="relative w-full py-32 bg-[#0a0a0a] overflow-hidden border-t border-white/5">
+        <section id="raw-data" className="relative w-full bg-[#0a0a0a] overflow-hidden">
             {/* Background: Cracked Earth */}
             <div className="absolute inset-0 z-0 opacity-20 bg-[url('/Gemini_Generated_ImagesJ5na2js5na2js5n(1).png')] bg-cover bg-center" />
 

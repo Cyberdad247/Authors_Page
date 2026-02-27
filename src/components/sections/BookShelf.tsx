@@ -73,7 +73,7 @@ const KineticBook = ({ title, coverImage }: BookProps) => {
 
 export const BookShelf = () => {
   return (
-    <section id="shelf" className="min-h-screen bg-[#0a0505] flex items-center justify-center perspective-[1000px] py-20">
+    <section id="shelf" className="relative w-full bg-[#0a0505] flex items-center justify-center perspective-[1000px]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         <KineticBook title="Volume I" coverImage="/book-1.jpg" />
         <KineticBook title="Volume II" coverImage="/book-2.jpg" />

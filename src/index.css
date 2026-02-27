@@ -219,3 +219,11 @@
 .animate-ember-rise {
   animation: ember-rise 3s ease-out infinite;
 }
+
+/* Optimization: Remove blur on low-power or reduced-motion devices */
+@media (prefers-reduced-motion: reduce) {
+  .backdrop-blur-md {
+    backdrop-filter: none !important;
+    background-color: rgba(20, 20, 20, 0.95); /* Fallback to solid opaque color */
+  }
+}

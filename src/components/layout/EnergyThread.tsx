@@ -49,9 +49,12 @@ export const EnergyThread = () => {
                     d={weavingPath}
                     stroke={glowColor}
                     strokeWidth="0.8"
-                    style={{ pathLength }}
+                    style={{
+                        pathLength,
+                        willChange: "stroke-dashoffset" // CRITICAL OPTIMIZATION
+                    }}
                     strokeDasharray="0 1"
-                    filter="blur(2px)"
+                    className="drop-shadow-[0_0_8px_rgba(0,255,100,0.8)]" // Use CSS hardware accelerated drop-shadow
                     opacity={0.4}
                 />
 

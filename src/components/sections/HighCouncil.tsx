@@ -161,7 +161,7 @@ export function HighCouncil() {
     <section
       ref={sectionRef}
       id="council"
-      className="relative w-full py-24 lg:py-32 bg-[#0a0505]"
+      className="relative w-full bg-[#0a0505]"
     >
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
 

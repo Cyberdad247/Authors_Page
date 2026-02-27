@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 
-const navLinks: { label: string; href: string }[] = [];
+const navLinks: { label: string; href: string }[] = [
+  { label: 'Library', href: '#shelf' },
+  { label: 'Council', href: '#council' },
+  { label: 'Alchemy', href: '#alchemy-shop' },
+  { label: 'Manifesto', href: '#manifesto' },
+];
 
 export function TopNav() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,7 +71,7 @@ export function TopNav() {
             {/* CTA Button */}
             <div className="hidden lg:block">
               <Button
-                onClick={() => scrollToSection('#magnet')}
+                onClick={() => scrollToSection('#singularity')}
                 size="sm"
                 className="bg-gradient-to-r from-[#FF4500] to-[#FF6B00] text-white font-semibold px-6 rounded-sm hover:from-[#FF6B00] hover:to-[#FF4500] transition-all duration-300 shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:shadow-[0_0_30px_rgba(255,69,0,0.5)]"
               >
@@ -119,7 +124,7 @@ export function TopNav() {
               </button>
             ))}
             <Button
-              onClick={() => scrollToSection('#magnet')}
+              onClick={() => scrollToSection('#singularity')}
               className="w-full bg-gradient-to-r from-[#FF4500] to-[#FF6B00] text-white font-semibold py-3 rounded-sm"
             >
               Join the Round Table

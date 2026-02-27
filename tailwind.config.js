@@ -18,6 +18,11 @@ module.exports = {
           emerald: '#00FF99',
           dark: '#0a0505',
           burgundy: '#4A0404',
+          // Merlin's Semantic Audit Additions
+          fire: "#FF4500",
+          ember: "#FFA500",
+          void: "#8A2BE2",
+          neon: "#00FF66",
         },
         /* Legacy Camelot Colors */
         parchment: "#F4F4F0",
@@ -60,6 +65,9 @@ module.exports = {
         tangerine: ['Tangerine', 'cursive'],
         inter: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
+        // Optimized semantic stacks
+        serif: ['"Cinzel Decorative"', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'hero': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
